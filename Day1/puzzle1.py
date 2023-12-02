@@ -1,4 +1,3 @@
-import re
 file_path = './day1.txt'
 with open(file_path,'r') as file:
     lines = []
