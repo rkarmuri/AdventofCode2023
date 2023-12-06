@@ -10,15 +10,12 @@ maps_data = []
 with open(file_path, 'r') as file:
     seed_data = parse_seed(file.readline())
 
-    current_map = None
-
     for line in file:
         words = line.split()
 
         if words and words[1].endswith(':'):
-            current_map = words[0]
             maps_data.append([])
-        elif current_map and words:
+        elif words:
             data = tuple(map(int, words))
             maps_data[-1].append(data)
 
@@ -33,9 +30,7 @@ def searchLoc(seed):
 
     return cur_seed
 
-seed_loc = []
-for seed in seed_data:
-    seed_loc.append(searchLoc(seed))
+loc = [searchLoc(seed) for seed in seed_data]
 
-result = min(seed_loc)
+result = min(loc)
 print(result)
