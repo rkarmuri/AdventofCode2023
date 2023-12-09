@@ -48,7 +48,6 @@ with open(file_path, 'r') as file:
 
 print(plays)
 
-for i, value in enumerate(plays):
-    result += (i + 1) * value[1]
+result = sum((i + 1) * value[1] for i, value in enumerate(plays))
 
 print(result)
