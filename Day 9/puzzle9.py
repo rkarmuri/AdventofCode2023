@@ -1,4 +1,4 @@
-file_path = './ex.in'
+file_path = './day9.in'
 
 # Part 1 extrapolate function that goes forward once
 def extrapolate1(nums):
@@ -25,5 +25,6 @@ with open(file_path,'r')as file:
         result1 += extrapolate1(nums)
         result2 += extrapolate2(nums)
 
+print(result1)
 print(result2)
 
